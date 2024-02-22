@@ -1,0 +1,212 @@
+---
+import Menu from '../components/Menu.astro'
+
+import '@fontsource-variable/rubik';
+import '@fontsource-variable/red-hat-mono';
+
+interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="fixed top-0 z-[-2] h-[150vh] w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
+		<Menu></Menu>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		color-scheme: light dark;
+		--phrase-width: 20ch;
+		--phrase-steps: 20;
+		--main-height: 100vh;
+		--project-height: 315vh;
+		--about-height: 100%
+	}
+	html {
+		font-family: 'Rubik variable';
+		background: #343534;
+		scroll-behavior: smooth;
+	}
+	body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 100vh;
+	}
+	/* .webkit-stroke {
+		 -webkit-text-stroke: 3px rgb(250 204 21); 
+		 color: transparent;        
+	} */
+	.menu nav .scroll-hover:nth-child(1) {
+		animation: color-menu linear ;
+		animation-timeline: scroll(root);
+		/* animation-range: entry 0% cover 10%  */
+		animation-range: entry 0% exit var(--main-height);
+	}
+	.menu nav .scroll-hover:nth-child(2) {
+		animation: color-menu linear ;
+		animation-timeline: scroll(root);
+		/* animation-range: entry 0% cover 10%  */
+		animation-range: entry var(--main-height) exit var(--project-height);
+	}
+	.menu nav .scroll-hover:nth-child(4) {
+		animation: color-menu linear ;
+		animation-timeline: scroll(root);
+		/* animation-range: entry 0% cover 10%  */
+		animation-range: entry var(--project-height) exit var(--about-height);
+	}
+
+
+	@keyframes color-menu {
+		from {
+			color: #fff;
+		}
+		0%, 100% {
+			color: rgb(250 204 21)
+		}
+	}
+
+	.animation-typewriter {
+	    display: block;
+		/* font-size: 36px; */
+	    white-space: nowrap;
+		box-sizing: content-box;
+	    
+		font-family: 'Red Hat Mono Variable';
+	    width: var(--phrase-width);
+	    overflow: hidden;
+		line-height: normal;
+	    animation: typewriter infinite 2s steps(var(--phrase-steps)) alternate;
+	}
+
+	.transition-color-1 {
+		transition: border 700ms, transform 500ms, background-color 300ms
+	}
+
+	#blinker {
+		animation: blink 0.5s infinite step-end alternate;
+	}
+	#typewriter {
+		transition: color .5s;
+	}
+	.fullstack {
+		color: rgb(250 204 21 )
+	}
+	.junior {
+		color: rgb(132 204 22 / 0.9);
+	}
+	.argentina {
+		color: rgb(125 211 252)
+	}
+	.diseñador {
+		color: rgb(14 165 233 / 0.8);
+	}
+
+	@media (min-width: 640px) {
+		#projects-container article:nth-child(odd) > .elements{
+		flex-direction: row-reverse;
+	}
+
+	}
+
+	@keyframes typewriter {
+    	from { width: 0ch;}
+		/* to {
+			width: var(--phrase-width);
+		} */
+	}
+/* 
+	@keyframes delay {
+		100% {
+		width: var(--phrase-width);
+		}
+	} */
+
+	@keyframes blink {
+	    50% {border-color: transparent;}
+	}
+
+	header.menu {
+    position: fixed;
+    top: 0;
+	animation: scrollNavBlur 1s ;
+	animation-timeline: scroll(root);
+	animation-range: 200px, 300px;
+	}
+
+	@keyframes scrollNavBlur {
+		to {
+			backdrop-filter: blur(15px);
+		}
+	}
+
+	.arrow {
+		transition: scale .4s;
+    animation: pop 7s infinite alternate both;
+	}
+	.arrow:hover {
+		animation-play-state: paused;
+		scale: 1.2;
+	}
+
+	@keyframes pop {from,
+  20%,
+  53%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -30px, 0) scaleY(1.1);
+    transform: translate3d(0, -30px, 0) scaleY(1.1);
+  }
+
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -15px, 0) scaleY(1.05);
+    transform: translate3d(0, -15px, 0) scaleY(1.05);
+  }
+
+  80% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0) scaleY(0.95);
+    transform: translate3d(0, 0, 0) scaleY(0.95);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -4px, 0) scaleY(1.02);
+    transform: translate3d(0, -4px, 0) scaleY(1.02);
+  }
+}
+
+</style>
+<script is:inline>
+const projects = document.getElementById("projects")
+document.documentElement.style.setProperty("--project-height", `${projects.offsetHeight += 250}px`);
+
+//here i would do the same with de experience and the about me
+
+
+</script>
