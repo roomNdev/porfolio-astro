@@ -51,24 +51,7 @@ const { title } = Astro.props;
 		 -webkit-text-stroke: 3px rgb(250 204 21); 
 		 color: transparent;        
 	} */
-	.menu nav .scroll-hover:nth-child(1) {
-		animation: color-menu linear ;
-		animation-timeline: scroll(root);
-		/* animation-range: entry 0% cover 10%  */
-		animation-range: entry 0% exit var(--main-height);
-	}
-	.menu nav .scroll-hover:nth-child(2) {
-		animation: color-menu linear ;
-		animation-timeline: scroll(root);
-		/* animation-range: entry 0% cover 10%  */
-		animation-range: entry var(--main-height) exit var(--project-height);
-	}
-	.menu nav .scroll-hover:nth-child(4) {
-		animation: color-menu linear ;
-		animation-timeline: scroll(root);
-		/* animation-range: entry 0% cover 10%  */
-		animation-range: entry var(--project-height) exit var(--about-height);
-	}
+	
 
 
 	@keyframes color-menu {
@@ -140,7 +123,7 @@ const { title } = Astro.props;
 	    50% {border-color: transparent;}
 	}
 
-	header.menu {
+	.menu {
     position: fixed;
     top: 0;
 	animation: scrollNavBlur 1s ;
@@ -148,11 +131,37 @@ const { title } = Astro.props;
 	animation-range: 200px, 300px;
 	}
 
+	.bg-blur {
+		backdrop-filter: none;
+	}
+
+	@media (max-width: 450px) {
+		.bg-blur {
+		backdrop-filter: blur(15px);
+		background-color: rgb(148 163 184 / 0.3);
+		}
+		#menu-list[data-visible="true"] {
+			transform: translateX(0%);
+		}
+	}
+
 	@keyframes scrollNavBlur {
 		to {
 			backdrop-filter: blur(15px);
+			background-color: rgb(148 163 184 / 0.3);
 		}
 	}
+
+	#toggleNav[aria-expanded="true"] span:nth-child(1) {
+		transform: translate3d(0, 6px, 0) rotate(45deg)
+	}
+	#toggleNav[aria-expanded="true"] span:nth-child(2) {
+		background-color: transparent;
+	}
+	#toggleNav[aria-expanded="true"] span:nth-child(3) {
+		transform: translate3d(0, -6px, 0) rotate(-45deg)
+	}
+
 
 	.arrow {
 		transition: scale .4s;

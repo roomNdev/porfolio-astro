@@ -1,8 +1,38 @@
-<header class="p-2 flex items-center rounded-3xl px-6 z-10 menu">
-    <nav class="gap-x-8 md:gap-x-10 w-full flex justify-center md:text-lg text-xs " >
+<header class="w-full flex justify-center ">
+    <button id="toggleNav"
+    class="flex flex-col gap-y-1 items-center
+    fixed right-4 top-2 z-20 min-[451px]:invisible
+    bg-slate-400/40 p-1 rounded-md
+    " 
+    aria-controls="menu-list" aria-expanded="false">
+        <span class="bg-white transition-transform transition-color-1 duration-500 rounded-3xl w-4 h-[2px]"></span>
+        <span class="bg-white transition-transform transition-color-1 duration-500 rounded-3xl w-4 h-[2px]"></span>
+        <span class="bg-white transition-transform transition-color-1 duration-500 rounded-3xl w-4 h-[2px]"></span>
+        <span class="sr-only">Menu</span>
+    </button>
+    <nav id="menu-list" data-visible="false"
+    class="
+        min-[451px]:rounded-3xl
+        gap-8 md:gap-10 flex justify-center flex-col
+        md:text-lg text-xs 
+        min-[451px]:flex-row max-[450px]:h-full 
+        max-[450px]:right-0 bg-blur  max-[450px]:translate-x-[100%]
+        p-4 menu z-10
+        transition-transform duration-500
+        ">
         <a href="#" class="opacity-80 hover:opacity-100 transition-opacity duration-300 hover:text-yellow-300 transition-colors scroll-hover ">Inicio</a>
-        <a href="#projects" class="opacity-80 hover:opacity-100 transition-opacity duration-300 hover:text-yellow-300 transition-colors scroll-hover">Proyectos</a>
         <a href="#experience" class="opacity-80 hover:opacity-100 transition-opacity duration-300 hover:text-yellow-300 transition-colors scroll-hover">Experiencia</a>
+        <a href="#projects" class="opacity-80 hover:opacity-100 transition-opacity duration-300 hover:text-yellow-300 transition-colors scroll-hover">Proyectos</a>
         <a href="#about" class="opacity-80 hover:opacity-100 transition-opacity duration-300 hover:text-yellow-300 transition-colors scroll-hover">Sobre mi</a>
     </nav>
 </header>
+<script is:inline>
+    const nav = document.getElementById('menu-list')
+    const toggleNav = document.getElementById('toggleNav')
+
+    toggleNav.addEventListener('click', () => {
+        let isOpen = nav.getAttribute("data-visible")
+        nav.setAttribute("data-visible", `${isOpen === 'false' ? true : false}`)
+        toggleNav.setAttribute("aria-expanded", `${isOpen === 'false' ? true : false}`)
+    })
+</script>
