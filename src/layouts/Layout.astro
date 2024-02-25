@@ -15,7 +15,8 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Bienvenido a mi portfolio! Mi nombre es Roman y espero que estemos en contacto pronto!
+		" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -40,6 +41,9 @@ const { title } = Astro.props;
 		font-family: 'Rubik variable';
 		background: #343534;
 		scroll-behavior: smooth;
+		
+		overflow-x: hidden;
+		
 	}
 	body {
 		display: flex;
@@ -51,8 +55,85 @@ const { title } = Astro.props;
 		 -webkit-text-stroke: 3px rgb(250 204 21); 
 		 color: transparent;        
 	} */
-	
+/* 	
+	#contact {
+		animation: appearFromBack both ;
+		animation-timeline: view();
+		animation-range: entry 0% cover 15%;
+	} */
 
+	@media (max-width: 350px;) {
+		#main img {
+		width: 4rem;
+		height: 4rem;
+	}
+	 	#main {
+			justify-items: center;
+			align-items: center;
+		}
+	}
+
+	#main img {
+		width: 6em;
+		height: 6em;
+		aspect-ratio: 1;
+		object-fit: cover;
+		border-radius: 100%;
+	}
+	@keyframes appearFromBack {
+		from {
+			transform: translate3d(0,-30px,0) scale(.9);
+			opacity: .3;
+		}
+		to {
+			transform: translate3d(0,0,0) scale(1);
+			opacity: 1;
+		}
+	}
+
+	
+	#main {
+		animation: appearFromBack .8s both ;
+	}
+	
+	@keyframes appearFromLeft {
+		from {
+			transform: translate3d(-60px, 0, 0);
+			opacity: .3;
+		}
+		to {
+			transform: translate3d(0,0,0);
+			opacity: 1;
+		}
+	}
+	@keyframes appearFromRight {
+		from {
+			transform: translate3d(60px, 0, 0);
+			opacity: .3;
+		}
+		to {
+			transform: translate3d(0,0,0);
+			opacity: 1;
+		}
+	}
+	@media (min-width: 640px) {
+		#projects-container article:nth-child(odd) > .elements{
+		flex-direction: row-reverse;
+		
+	}
+		/* #projects-container article:nth-child(even) {
+			animation: appearFromRight linear both;
+		animation-timeline: view();
+		animation-range: entry 10px, cover 15px;
+		} */
+	}
+
+	.project {
+		overflow: hidden;
+		animation: appearFromLeft linear both;
+		animation-timeline: view();
+		animation-range: entry 1%, cover 2%;
+	}
 
 	@keyframes color-menu {
 		from {
@@ -63,6 +144,41 @@ const { title } = Astro.props;
 		}
 	}
 
+	.copy:hover::after, .send:hover::after {
+          opacity: 1;
+          transform: translateY(0) translateX(-50%);
+        }
+	.copy::after, .send::after {
+        bottom: 40px;
+        left: 50%;
+        padding: 5px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+		/* z-index: 100000; */
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        background-color: rgba(68, 88, 117, 0.4);
+        color: #ffffff;
+        transform: translateY(10px) translateX(-50%);
+        transition: transform 300ms ease, background-color 300ms;
+            text-align: center;
+      }
+	  .copy::after {
+		content: "Copiar";
+		width: 80px;
+	  }
+	  .copy.success::after {
+		content: "Copiado!";
+		background-color: rgb(132 204 22 / .4);
+		width: 80px;
+	  }
+	  .send::after {
+		width: 100px;
+		content: "Enviar mail";
+	  }
+
+@media (min-width: 320px) {
 	.animation-typewriter {
 	    display: block;
 		/* font-size: 36px; */
@@ -76,6 +192,9 @@ const { title } = Astro.props;
 	    animation: typewriter infinite 2s steps(var(--phrase-steps)) alternate;
 	}
 
+}
+
+	
 	.transition-color-1 {
 		transition: border 700ms, transform 500ms, background-color 300ms
 	}
@@ -99,12 +218,6 @@ const { title } = Astro.props;
 		color: rgb(14 165 233 / 0.8);
 	}
 
-	@media (min-width: 640px) {
-		#projects-container article:nth-child(odd) > .elements{
-		flex-direction: row-reverse;
-	}
-
-	}
 
 	@keyframes typewriter {
     	from { width: 0ch;}

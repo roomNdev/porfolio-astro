@@ -4,16 +4,19 @@ import TypeWriter from '../components/TypeWriter.astro'
 import ArrowIcon from '../components/icons/ArrowIcon.astro'
 import Github from './icons/Github.astro'
 import Linkedin from './icons/Linkedin.astro'
+import Download from './icons/Download.astro'
+// class=" size-24 min-[400px]:size-28 min-[600px]:size-32 object-cover rounded-full md:mx-8 " 
 ---
 
 <section id="main" class="flex flex-col h-[100vh] justify-center relative" id="#main">
     
     <div class="flex justify-evenly min-[400px]:gap-x-4 min-[400px]:justify-center">
         <img src="https://i.imgur.com/ilJ9jnQ.jpg" alt="" 
-        class=" size-24 min-[400px]:size-28 min-[600px]:size-32 object-cover rounded-full md:mx-8" >
-        <section class="flex flex-col gap-y-4">
+         
+        >
+        <section class="flex flex-col gap-y-4  max-[320px]:items-center  max-[320px]:justify-center">
             <div class="flex gap-x-6 items-center flex-col md:flex-row">
-                <h1 class="flex sm:text-6xl text-3xl">
+                <h1 class="flex sm:text-6xl text-3xl max-[270px]:text-xl">
                     romn
                     <span class="text-yellow-400">dev</span>
                 </h1>
@@ -23,17 +26,18 @@ import Linkedin from './icons/Linkedin.astro'
                 </Badge>
             </div>
         
-            <div class="relative">
+            <div class="relative ">
                 <TypeWriter></TypeWriter>
             </div>
-            <section class="pt-4 sm:pt-8 flex gap-4">
+            <section class="pt-4 sm:pt-8 flex gap-4 flex-wrap justify-center">
                 <!-- <article class="h-8 border border-slate-500/80 rounded-xl p-3 w-24 flex"> -->
                     <a class="flex items-center justify-center gap-1
                     border border-slate-500/80 rounded-xl px-2 py-1
                     hover:bg-slate-400/40 transition-color-1 duration-500
                     hover:scale-105 transition-transform
                     text-slate-400 hover:text-slate-200
-                    " href="https://github.com/roomNdev/"><Github class="size-6"/><span class="text-xs">Github</span></a>
+                    " target="_blank" href="https://github.com/roomNdev/">
+                    <Github class="size-6"/><span class="text-xs max-[400px]:w-0 max-[400px]:invisible">Github</span></a>
                 <!-- </article> -->
                 <!-- <article class="h-8 border border-slate-500/80 rounded-xl p-3 w-24 flex"> -->
                     <a class="flex items-center justify-center gap-1
@@ -41,13 +45,20 @@ import Linkedin from './icons/Linkedin.astro'
                     hover:bg-slate-400/40 transition-color-1 duration-500
                     hover:scale-105 transition-transform
                     text-slate-400 hover:text-slate-200
-                    " href="https://ar.linkedin.com/in/roman-bustamante-9641bb217"><Linkedin class="size-6"/><span class="text-xs">LinkedIn</span></a>
+                    " target="_blank" href="https://ar.linkedin.com/in/roman-bustamante-9641bb217">
+                    <Linkedin class="size-6"/><span class="text-xs max-[400px]:w-0 max-[400px]:invisible">LinkedIn</span></a>
+                    <a class="flex items-center justify-center gap-1
+                    border border-slate-500/80 rounded-xl px-2 py-1
+                    hover:bg-slate-400/40 transition-color-1 duration-500
+                    hover:scale-105 transition-transform
+                    text-slate-400 hover:text-slate-200
+                    " target="_blank" href="/Cv"><Download class="size-6 text-white"/><span class="text-xs">CV</span></a>
                 <!-- </article> -->
             </section>
         </section>
-        
+        <!-- Falta experienca, e imagenes -->
     </div>
     <section>
-        <a class='absolute bottom-5 left-[50%] arrow' href='#projects'><ArrowIcon /></a>
+        <a class='absolute sm:bottom-8 bottom-32 left-[50%] arrow' href='#projects'><ArrowIcon /></a>
     </section>
 </section>

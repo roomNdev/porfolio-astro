@@ -1,0 +1,42 @@
+---
+import Copy from './icons/Copy.astro'
+import Send from './icons/Send.astro'
+---
+
+<section id="contact" class="flex flex-col items-center justify-center gap-4 py-12">
+    <h2 class="text-2xl text-yellow-300">Contacto</h2>
+    <article class="flex gap-1 flex-wrap items-center justify-center">
+        <input type="text" value="romqnabustamante@gmail.com" 
+        class=" sm:w-72 text-center 
+        bg-slate-500/40 border rounded-xl border-slate-600
+        outline-none text-sm
+        mail sm:text-base p-1 
+        " 
+        readonly/>
+        <button class="bg-slate-500/40 border rounded-xl border-slate-600 p-1
+        hover:bg-slate-400/40 transition-color-1 duration-500
+        hover:scale-110 transition-transform
+        copy z-50
+        "
+        ><Copy/></button>
+        <a 
+        href="mailto:romqnabustamante@gmail.com"
+        class="bg-slate-500/40 border rounded-xl border-slate-600 p-1
+        hover:bg-slate-400/40 transition-color-1 duration-500
+        hover:scale-110 transition-transform
+        send z-50
+        "><Send/></a>
+    </article>
+</section>
+<script is:inline>
+    const copy = document.querySelector('.copy')
+    const input = document.querySelector('.mail').value
+    copy.addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText(input);
+            copy.classList.add('success')
+        } catch (err) {
+            console.log(err);
+        }
+    })
+</script>

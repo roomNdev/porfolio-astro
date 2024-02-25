@@ -69,46 +69,47 @@ const ICONS = { NEXT: {
 }
 
 const PROJECTS = [
+  
+  // {
+  //   title: "Landing page",
+  //   img: "https://i.imgur.com/sLssMAo.png",
+  //   text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae",
+  //   id: 2,
+  //   url: "https://react-webshop-front.vercel.app",
+  //   tags: [
+  //     ICONS.NEXT
+  //   ]
+  // },
   {
-    title: "E-commerce + Dashboard",
-    img: "https://i.imgur.com/sLssMAo.png",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae",
+    title: "E-commerce NextJS",
+    img: "https://i.imgur.com/ubPwmbR.jpg",
+    text: "Un E-commerce realizado con NextJS y TailwindCSS, en donde integré la API de MercadoPago para pagos online.",
     id: 1,
-    url: "https://react-webshop-front.vercel.app",
-    tags: [
-        ICONS.REACT, ICONS.CSS, ICONS.JS, ICONS.WS
-    ]
-  },
-  {
-    title: "Landing page",
-    img: "https://i.imgur.com/sLssMAo.png",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae",
-    id: 2,
-    url: "https://react-webshop-front.vercel.app",
-    tags: [
-      ICONS.NEXT
-    ]
-  },
-  {
-    title: "E-commerce + CMS",
-    img: "https://i.imgur.com/sLssMAo.png",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae",
-    id: 3,
     url: "https://next-ecommerce-mu-amber.vercel.app",
     tags: [
         ICONS.NEXT, ICONS.TAILWIND, ICONS.Zustand, ICONS.MP
     ]
   },
   {
-    title: "Dashboard",
-    img: "https://i.imgur.com/sLssMAo.png",
-    text: "Arreglar problema con la base de datos, sacar screen y añadir desc",
-    id: 3,
+    title: "CMS y Dashboard",
+    img: "https://i.imgur.com/XWwYhxQ.jpg",
+    text: "Este proyecto se relaciona con el anterior ya que es una plataforma para gestion de contenido, así como un panel de control para administrar el stock, las ventas y configuraciones de la tienda",
+    id: 2,
     url: "https://next-ecommerce-mu-amber.vercel.app",
     tags: [
         ICONS.NEXT, ICONS.CLOUDINARY, ICONS.PRISMA, ICONS.CLERK
     ]
-  }
+  },
+  {
+    title: "E-commerce + Dashboard",
+    img: "https://i.imgur.com/BuYP5Au.jpg",
+    text: "En este proyecto realicé un E-commerce completemente nativo, utilizando react, y desarrollé el backend con NodeJS, ademas posee un panel de control de pedidos realizado con HTML, CSS y Javascript",
+    id: 3,
+    url: "https://react-webshop-front.vercel.app",
+    tags: [
+        ICONS.REACT, ICONS.CSS, ICONS.JS, ICONS.WS
+    ]
+  },
 ]
 
 
@@ -122,6 +123,7 @@ const PROJECTS = [
               return (
                 <article 
                 class="
+                project
                 flex flex-col items-center gap-2 
                 text-lg text-wrap p-2 
                 w-full 
@@ -129,7 +131,7 @@ const PROJECTS = [
                 ">
                 <h3 class="text-sm sm:text-xl text-center h-16 flex items-center">{project.title}</h3>
                 <section class="flex sm:flex-row flex-col elements">
-                  <a 
+                  <a  target="_blank"
                   href={project.url}
                   class="bg-slate-700/70 relative
                   p-1 rounded-xl opacity-90 
