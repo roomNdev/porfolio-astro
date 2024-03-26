@@ -1,6 +1,6 @@
 
-<section class="flex  min-[320px]:absolute ">
-    <span id="typewriter" class="animation-typewriter fullstack sm:text-2xl text-sm  max-[320px]:text-center">FullStack Developer</span>
+<section class="flex min-[320px]:absolute max-[320px]:left-[-65px]">
+    <span translate="no" id="typewriter" class="animation-typewriter fullstack sm:text-2xl text-sm  max-[320px]:text-center">FullStack Developer</span>
     <span id="blinker" class="border-r-4 border-white  max-[320px]:invisible"></span>    
 </section>
 <!-- <span id="typewriter" class="text-sm max-[270px]:visible">FullStack Developer</span> -->
@@ -9,15 +9,13 @@
 <span id="typewriter" class="text-sm max-[270px]:visible">Diseñador Web</span> -->
 
 <script is:inline>
-    if (screen.width < 320) {
-        return
-    } 
-    else {
+
+    
         const PHRASES = [
         {text: "FullStack Developer", class: 'fullstack'},// 19ch
         {text: "Junior", class: 'junior'}, // 6ch
         {text: "Argentina", class: 'argentina'}, // 9ch
-        {text: "Diseñador Web", class: 'diseñador'} //13ch
+        {text: "Web Designer", class: 'diseñador'} //13ch
     ]
 
     const typewriter = document.getElementById('typewriter')
@@ -73,6 +71,5 @@
 
     let play = setInterval(playFunc, 4000)
 
-    }
     
 </script>

@@ -8,6 +8,7 @@ import Css from "./icons/CSS.astro"
 import JS from "./icons/JS.astro"
 import MP from "./icons/MP.astro"
 import Clerk from "./icons/Clerk.astro"
+import projects from "../Projects.json"
 
 const ICONS = { NEXT: {
     name: "Next.js",
@@ -69,21 +70,10 @@ const ICONS = { NEXT: {
 }
 
 const PROJECTS = [
-  
-  // {
-  //   title: "Landing page",
-  //   img: "https://i.imgur.com/sLssMAo.png",
-  //   text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae",
-  //   id: 2,
-  //   url: "https://react-webshop-front.vercel.app",
-  //   tags: [
-  //     ICONS.NEXT
-  //   ]
-  // },
-  {
+    {
     title: "E-commerce NextJS",
     img: "https://i.imgur.com/ubPwmbR.jpg",
-    text: "Un E-commerce realizado con NextJS y TailwindCSS, en donde integré la API de MercadoPago para pagos online.",
+    text: "An E-commerce made with NextJS(React) and TailwindCSS, where the API of MercadoPago was integrated to make online payments.",
     id: 1,
     url: "https://next-ecommerce-mu-amber.vercel.app",
     tags: [
@@ -93,9 +83,9 @@ const PROJECTS = [
   {
     title: "CMS y Dashboard",
     img: "https://i.imgur.com/XWwYhxQ.jpg",
-    text: "Este proyecto se relaciona con el anterior ya que es una plataforma para gestion de contenido, así como un panel de control para administrar el stock, las ventas y configuraciones de la tienda",
+    text: "This project is related to the previous as it is a plataform for managing content, as well as a control panel for administrate the stock, the sales and configurations of the store",
     id: 2,
-    url: "https://next-ecommerce-mu-amber.vercel.app",
+    url: "https://next-ecommerce-dashboard-romndev.vercel.app",
     tags: [
         ICONS.NEXT, ICONS.CLOUDINARY, ICONS.PRISMA, ICONS.CLERK
     ]
@@ -103,7 +93,7 @@ const PROJECTS = [
   {
     title: "E-commerce + Dashboard",
     img: "https://i.imgur.com/BuYP5Au.jpg",
-    text: "En este proyecto realicé un E-commerce completemente nativo, utilizando react, y desarrollé el backend con NodeJS, ademas posee un panel de control de pedidos realizado con HTML, CSS y Javascript",
+    text: "In this project I made an E-commerce completely native, using React, and developed the backend with NodeJS, also it has a control panel of the orders done with HTML, CSS and Javascript",
     id: 3,
     url: "https://react-webshop-front.vercel.app",
     tags: [
@@ -116,10 +106,11 @@ const PROJECTS = [
 ---
 
 <section id="projects" class="pt-12 m-auto max-w-[900px] ">
-<h2 class="text-center text-3xl text-yellow-300">Proyectos</h2>
+<h2 class="text-center text-3xl text-yellow-300">Projects</h2>
   <section class="flex gap-4 flex-wrap items-center justify-center " id="projects-container">
         {
-          PROJECTS.map((project) => {   
+          PROJECTS.map((project) => {
+                 
               return (
                 <article 
                 class="
@@ -130,22 +121,23 @@ const PROJECTS = [
                 border-b border-slate-600/40 hover:border-slate-500/80 transition-color-1
                 ">
                 <h3 class="text-sm sm:text-xl text-center h-16 flex items-center">{project.title}</h3>
-                <section class="flex sm:flex-row flex-col elements">
+                <section class="flex sm:flex-row flex-col elements mx-1">
                   <a  target="_blank"
                   href={project.url}
                   class="bg-slate-700/70 relative
                   p-1 rounded-xl opacity-90 
                   cursor-pointer
-                  hover:scale-105 transition-opacity transition-transform duration-500
                   ">
-                    <img src={project.img} alt="" class="sm:max-w-[400px] rounded-lg "/>
+                    <div class="overflow-hidden rounded-lg ">
+                      <img src={project.img} alt="" class="sm:max-w-[400px]  hover:scale-105 transition-opacity transition-transform duration-500"/>
+                    </div>
                     <p 
                     class="text-sm 
                     w-[40%] text-center
                     absolute bottom-[3%] left-[30%] 
                     bg-slate-600/50 p-1 rounded-xl transition-color-1
                     hover:bg-slate-800 transition-colors hover:scale-x-105 transition-transform duration-500
-                    ">Visita la pagina
+                    ">Go to the website
                     </p>
                   </a>
                     <section class="flex flex-col justify-center pl-4">
@@ -174,7 +166,7 @@ const PROJECTS = [
                         </section>
                     <details class="w-full bg-slate-600/40 rounded-lg sm:invisible sm:h-0">
                       <summary class="text-xs text-center w-full cursor-pointer py-1 flex justify-center sm:invisible ">
-                        Descripcion
+                        Description
                       </summary>  
                       <div class="content p-2">
                         <p 

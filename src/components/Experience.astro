@@ -1,0 +1,89 @@
+---
+import { preview } from "astro"
+import Notebook from "./icons/notebook.astro"
+import Portfolio from "./icons/portfolio.astro"
+import Badge from "./Badge.astro"
+
+const ICONS = { BLOG: {
+    name: "Blog",
+    class: "bg-black text-white",
+    icon: Notebook,
+  },
+  PORTFOLIO: {
+    name: "Portfolio",
+    class: "bg-black text-white",
+    icon: Portfolio,
+  },
+}
+
+
+const experience = [
+    {
+        title: "Lee UP blog",
+        img: "https://i.imgur.com/ubPwmbR.jpg",
+        shortDesc: "A blog created from scratch using Gatsby, Sanity and vanilla CSS, the project was destinated to a reading university club from Peru.",
+        id: 1,
+        current: true,
+        date: "Finalized, but still adding and creating features",
+        preview: true,
+        url: "https://leeudelpacifico.com",
+        icon: ICONS.BLOG
+      },
+      {
+        title: "3D designer portfolio",
+        img: "https://i.imgur.com/ubPwmbR.jpg",
+        shortDesc: "A web portfolio created for a 3D designer to show his work and more info about him, currently it's not available for privacy reasons",
+        id: 1,
+        date: "Finalized on March 13th, 2024",
+        current: false,
+        preview: false,
+        url: "https://next-ecommerce-mu-amber.vercel.app",
+        icon: ICONS.PORTFOLIO
+    }
+]
+
+---
+<h2 class="text-center text-3xl text-yellow-300 mt-12">Experience</h2>
+
+<section id="experience" class="mt-12 px-2">
+    <ol class="relative border-s border-gray-200 dark:border-gray-700">
+        {
+            experience.map((project, i) => (
+            <li class="mb-10 ms-6">            
+                <span class="absolute flex items-center justify-center p-1 w-6 h-6 rounded-full -start-3 ring-8 ring-gray-900 bg-blue-900">
+                    {project.icon && <project.icon.icon class="size-4" />}
+                </span>
+                <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white ">{project.title}
+                    { project.current
+                        ? <span class="ms-3 "><Badge >Currently working on</Badge> </span>
+                        : <span class="text-sm font-medium me-2 px-2.5 py-0.5 rounded bg-blue-900 text-blue-300 ms-3">Latest</span> 
+                    }
+                </h3>
+                <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{project.date}</time>
+                <p 
+                class="mb-4 text-base font-normal 
+                text-gray-500 dark:text-gray-400">
+                    {project.shortDesc}
+                </p>
+                {project.preview 
+                    ? <a href={project.url} target="_blank" rel="noreferer"
+                        class="inline-flex items-center px-4 py-2 
+                        text-sm font-medium rounded-lg
+                        transition-color-1 transition-transform duration-500
+                        bg-gray-800 text-gray-300
+                        border-gray-600 hover:text-white hover:bg-gray-700 ">
+                        View project</a>
+                    : <button disabled
+                        class="inline-flex items-center px-4 py-2 
+                        text-sm font-medium opacity-65
+                        text-gray-900 bg-white border border-gray-200 rounded-lg
+                        dark:bg-gray-800 dark:text-gray-400 
+                        dark:border-gray-600 "
+                        >
+                        Preview not available</button>
+                    }
+            </li>
+            ))
+        }
+    </ol>
+</section>

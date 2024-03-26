@@ -1,0 +1,24 @@
+[
+    {
+        "title": "Lee UP blog",
+        "img": "https://i.imgur.com/ubPwmbR.jpg",
+        "shortDesc": "A blog created from scratch using Gatsby, Sanity and vanilla CSS, the project was destinated to a reading university club from Peru.",
+        "id": 1,
+        "current": true,
+        "date": "Finalized, but still adding and creating features",
+        "preview": true,
+        "url": "https://leeudelpacifico.com",
+        "icon": "Notebook"
+      },
+      {
+        "title": "3D designer portfolio",
+        "img": "https://i.imgur.com/ubPwmbR.jpg",
+        "shortDesc": "A web portfolio created for a 3D designer to show his work and more info about him, currently it's not available for privacy reasons",
+        "id": 1,
+        "date": "Finalized on March 13th, 2024",
+        "current": false,
+        "preview": false,
+        "url": "https://next-ecommerce-mu-amber.vercel.app",
+        "icon": "Notebook"
+      }
+]

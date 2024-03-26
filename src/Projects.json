@@ -1,0 +1,32 @@
+[
+    {
+        "title": "E-commerce NextJS",
+        "img": "https://i.imgur.com/ubPwmbR.jpg",
+        "text": "An E-commerce made with NextJS(React) and TailwindCSS, where the API of MercadoPago was integrated to make online payments.",
+        "id": 1,
+        "url": "https://next-ecommerce-mu-amber.vercel.app",
+        "tags": [
+            "ICONS.NEXT", "ICONS.TAILWIND", "ICONS.Zustand", "ICONS.MP"
+        ]
+      },
+      {
+        "title": "CMS y Dashboard",
+        "img": "https://i.imgur.com/XWwYhxQ.jpg",
+        "text": "This project is related to the previous as it is a plataform for managing content, as well as a control panel for administrate the stock, the sales and configurations of the store",
+        "id": 2,
+        "url": "https://next-ecommerce-dashboard-romndev.vercel.app",
+        "tags": [
+            "ICONS.NEXT", "ICONS.CLOUDINARY", "ICONS.PRISMA", "ICONS.CLERK"
+        ]
+      },
+      {
+        "title": "E-commerce + Dashboard",
+        "img": "https://i.imgur.com/BuYP5Au.jpg",
+        "text": "In this project I made an E-commerce completely native, using React, and developed the backend with NodeJS, also it has a control panel of the orders done with HTML, CSS and Javascript",
+        "id": 3,
+        "url": "https://react-webshop-front.vercel.app",
+        "tags": [
+            "ICONS.REACT", "ICONS.CSS", "ICONS.JS", "ICONS.WS"
+        ]
+      }
+]

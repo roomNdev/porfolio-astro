@@ -9,6 +9,12 @@ interface Props {
 }
 const { title } = Astro.props;
 
+// let lang = "en"
+
+// const handleChangeLang = (event: Event) => {
+//         lang = event.target.value       
+// }
+
 ---
 
 <!doctype html>
@@ -24,11 +30,22 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<div class="fixed top-0 z-[-2] h-[150vh] w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
-		<Menu></Menu>
+		<!-- <section > -->
+			<!-- <select name="lang" id="lang" class="fixed right-0 top-1" 
+			>
+				<option value="en">English</option>
+				<option value="es">Spanish</option>
+			</select> -->
+			<Menu ></Menu>
+		<!-- </section> -->
 		<slot />
 	</body>
 </html>
 <style is:global>
+	#experience, #projects, #about {
+		scroll-margin-top: 140px;
+	}
+
 	:root {
 		color-scheme: light dark;
 		--phrase-width: 20ch;
@@ -41,9 +58,7 @@ const { title } = Astro.props;
 		font-family: 'Rubik variable';
 		background: #343534;
 		scroll-behavior: smooth;
-		
-		overflow-x: hidden;
-		
+		overflow-x: hidden;	
 	}
 	body {
 		display: flex;
@@ -165,17 +180,17 @@ const { title } = Astro.props;
             text-align: center;
       }
 	  .copy::after {
-		content: "Copiar";
+		content: "Copied";
 		width: 80px;
 	  }
 	  .copy.success::after {
-		content: "Copiado!";
+		content: "Copied!";
 		background-color: rgb(132 204 22 / .4);
 		width: 80px;
 	  }
 	  .send::after {
 		width: 100px;
-		content: "Enviar mail";
+		content: "Send mail";
 	  }
 
 @media (min-width: 320px) {

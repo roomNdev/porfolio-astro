@@ -1,3 +1,19 @@
+<!-- ---
+const { lang } = Astro.props;
+
+const DICTIONARY = {
+    "es" : {
+        "Home" : "Inicio"
+    },
+    "en" : {
+        "Home" : "Home"
+    }
+}
+
+console.log(lang);
+
+--- -->
+
 <header class="w-full flex justify-center ">
     <button id="toggleNav"
     class="flex flex-col gap-y-1 items-center
@@ -20,13 +36,25 @@
         px-4 py-2 menu z-10
         transition-transform duration-500
         ">
-        <a href="#" class="opacity-80 hover:opacity-100 transition-opacity duration-300 hover:text-yellow-300 transition-colors scroll-hover ">Inicio</a>
+        <a href="#" class="opacity-80 hover:opacity-100 transition-opacity duration-300
+         hover:text-yellow-300 transition-colors scroll-hover ">
+         Home
+        </a>
+        <a href="#experience" class="opacity-80 hover:opacity-100 transition-opacity duration-300 hover:text-yellow-300 transition-colors scroll-hover">Experience</a>
         <!-- <a href="#experience" class="opacity-80 hover:opacity-100 transition-opacity duration-300 hover:text-yellow-300 transition-colors scroll-hover">Experiencia</a> -->
-        <a href="#projects" class="opacity-80 hover:opacity-100 transition-opacity duration-300 hover:text-yellow-300 transition-colors scroll-hover">Proyectos</a>
-        <a href="#about" class="opacity-80 hover:opacity-100 transition-opacity duration-300 hover:text-yellow-300 transition-colors scroll-hover">Sobre mi</a>
+        <a href="#projects" class="opacity-80 hover:opacity-100 transition-opacity duration-300 hover:text-yellow-300 transition-colors scroll-hover">Projects</a>
+        <a href="#about" class="opacity-80 hover:opacity-100 transition-opacity duration-300 hover:text-yellow-300 transition-colors scroll-hover">About me</a>
     </nav>
 </header>
 <script is:inline>
+    // const lang = document.getElementById('lang')
+    lang.addEventListener('change', () => {
+        window.languaje = lang.value
+        console.log(window.languaje);
+    })
+
+    // console.log(window.languaje);
+
     const nav = document.getElementById('menu-list')
     const toggleNav = document.getElementById('toggleNav')
 
